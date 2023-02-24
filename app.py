@@ -8,7 +8,7 @@ def main():
     st.set_page_config(page_title="KI Musik",page_icon="🎵",layout="centered")
     hide_streamlit_style = """
              <style>
-              div.block-container{padding-top:0rem;}
+              div.block-container{padding-top:1rem;}
                div[data-testid="stToolbar"] {
                 visibility: hidden;
                 height: 0%;
