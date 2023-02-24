@@ -26,6 +26,7 @@ def main():
                 wav_bytes = wav.write("audio.wav", 44100, sound)
                 audio_data = open("audio.wav", "rb").read()
                 st.audio(audio_data, format="audio/wav")
+                st.download_button(label="Download Audio", data=audio_bytes, file_name="audio.wav", mime="audio/wav")
         except:
             st.write("Fehler beim Konvertieren, bitte App neu laden.")
     else:
