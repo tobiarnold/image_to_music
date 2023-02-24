@@ -26,7 +26,7 @@ def main():
                 wav_bytes = wav.write("audio.wav", 44100, sound)
                 audio_data = open("audio.wav", "rb").read()
                 st.audio(audio_data, format="audio/wav")
-       except:
+        except:
             st.write("Fehler beim Konvertieren, bitte App neu laden.")
     else:
         st.write("Bitte Bild hochladen, um Musik zu erzeugen.")
