@@ -17,7 +17,6 @@ def main():
     if uploaded_file is not None:
         try:
             img = Image.open(uploaded_file)
-            st.image(img, caption='Uploaded Image', use_column_width=True)
         except:
             st.write("Bitte anderes Bild auswählen.")
         try:
@@ -27,6 +26,7 @@ def main():
                 wav_bytes = wav.write("audio.wav", 44100, sound)
                 audio_data = open("audio.wav", "rb").read()
                 st.audio(audio_data, format="audio/wav")
+                st.image(img, caption='Uploaded Image', use_column_width=True)
                 #audio_bytes = io.BytesIO(audio_data)
                 #st.download_button(label="Download Audio", data=audio_bytes, file_name="audio.wav", mime="audio/wav")
         except:
