@@ -1,7 +1,7 @@
 import streamlit as st
 from PIL import Image
 import numpy as np
-import sounddevice as sd
+import scipy.io.wavfile as wav
 
 def main():
     st.set_page_config(page_title="KI Musik",page_icon="🎵",layout="centered")
