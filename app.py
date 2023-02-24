@@ -2,6 +2,7 @@ import streamlit as st
 from PIL import Image
 import numpy as np
 import scipy.io.wavfile as wav
+import io
 
 def main():
     st.set_page_config(page_title="KI Musik",page_icon="🎵",layout="centered")
@@ -26,9 +27,10 @@ def main():
                 wav_bytes = wav.write("audio.wav", 44100, sound)
                 audio_data = open("audio.wav", "rb").read()
                 st.audio(audio_data, format="audio/wav")
+                audio_bytes = io.BytesIO(audio_data)
                 st.download_button(label="Download Audio", data=audio_bytes, file_name="audio.wav", mime="audio/wav")
         except:
-            st.write("Fehler beim Konvertieren, bitte App neu laden.")
+            st.write("Fehler beim Konvertieren, bitte App neu laden.") 
     else:
         st.write("Bitte Bild hochladen, um Musik zu erzeugen.")
 
