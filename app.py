@@ -19,15 +19,15 @@ def main():
             st.image(img, caption='Uploaded Image', use_column_width=True)
         except:
             st.write("Bitte anderes Bild auswählen.")
-       # try:
-        if st.button("Sound genießen "):
-            img_array = np.array(img)
-            sound=np.reshape(img_array, (-1, 1))
-            wav_bytes = wav.write("audio.wav", 44100, sound)
-            audio_data = open("audio.wav", "rb").read()
-            st.audio(audio_data, format="audio/wav")
-       # except:
-       #     st.write("Fehler beim Konvertieren, bitte App neu laden.")
+        try:
+            if st.button("Sound genießen "):
+                img_array = np.array(img)
+                sound=np.reshape(img_array, (-1, 1))
+                wav_bytes = wav.write("audio.wav", 44100, sound)
+                audio_data = open("audio.wav", "rb").read()
+                st.audio(audio_data, format="audio/wav")
+       except:
+            st.write("Fehler beim Konvertieren, bitte App neu laden.")
     else:
         st.write("Bitte Bild hochladen, um Musik zu erzeugen.")
 
