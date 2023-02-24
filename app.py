@@ -23,9 +23,9 @@ def main():
         if st.button("Sound genießen "):
             img_array = np.array(img)
             sound=np.reshape(img_array, (-1, 1))
-            #fs = 44100
-            #sd.play(sound, fs)
-            st.audio(sound, format='audio/wav',sample_rate=44100)
+            wav_bytes = wav.write("audio.wav", 44100, sound)
+            audio_data = open("audio.wav", "rb").read()
+            st.audio(audio_data, format="audio/wav")
        # except:
        #     st.write("Fehler beim Konvertieren, bitte App neu laden.")
     else:
