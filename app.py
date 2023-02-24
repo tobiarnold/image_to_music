@@ -20,7 +20,7 @@ def main():
         except:
             st.write("Bitte anderes Bild auswählen.")
        # try:
-       if st.button("Sound genießen "):
+      if st.button("Sound genießen "):
             img_array = np.array(img)
             sound=np.reshape(img_array, (-1, 1))
             fs = 44100
