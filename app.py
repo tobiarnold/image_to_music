@@ -9,6 +9,11 @@ def main():
     hide_streamlit_style = """
              <style>
               div.block-container{padding-top:2rem;}
+               div[data-testid="stToolbar"] {
+                visibility: hidden;
+                height: 0%;
+                position: fixed;
+                }
              </style>
              """
     st.markdown(hide_streamlit_style, unsafe_allow_html=True)
